@@ -3,6 +3,12 @@ pragma solidity ^0.5.0;
 contract ProxyDelegate {
     address public owner;
     address public delegate; // contract to delegate calls to
+    uint256 public version = 1;
+
+    function setVersion(uint256 newVersion) public {
+        version = newVersion;
+    }
+
     event LogResult(bytes result);
 
     constructor(address delegateAddress) public {
